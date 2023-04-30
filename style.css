@@ -1,7 +1,13 @@
+
 *{
     margin: 0;
     padding: 0;
    
+}
+
+/* GOOGLEFONTS */
+body{
+    font-family: 'Martel Sans', sans-serif;
 }
 
 
@@ -28,7 +34,7 @@ margin-bottom: 8%;
 
 .logo p{
     color: #1F2226;
-    font-size: 25px;
+    font-size: 32.5px;
     font-weight: bold;
 }
 
@@ -82,7 +88,7 @@ flex-direction: column;
     border-radius: 25px;
     padding: 12px;
     width:24em;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-size: 16px;
     padding-bottom: 15px;
   
@@ -99,6 +105,7 @@ top:28%;
 left: 50%;
 padding-left: 150px;
 color:#B7B0DD ;
+
 
 }
 
@@ -140,6 +147,7 @@ position: relative;
     padding-bottom: 25px;
   text-align: center;
  color:#B7B0DD;
+ font-size: 13.5px;
 
 }
 
@@ -165,7 +173,7 @@ position: relative;
     flex-direction: row;
     justify-content: center;
     color: #B7B0DD;
-    gap: 160px;
+    gap: 135px;
       
 }
 
@@ -182,7 +190,7 @@ input[type="checkbox"] {
     height: 15.5px;
     border: 3px solid #ccc;
     vertical-align: middle;
-    margin-right: 5px;
+    margin-right: 2px;
   }
   
   /* custom checkbox when clicked*/
@@ -194,22 +202,7 @@ input[type="checkbox"] {
     border-color: #B7B0DD;
   }
 
-  .footer_details{
-    margin-top: 12%;
-    color: #B7B0DD;
-    padding-bottom: 60px;
-  }
-
-  .footer_details span{
-    font-weight: bolder;
-    border-bottom: 4.5px solid transparent;
-  }
-
-  .footer_details span:hover{
-    
-    border-bottom-color:#B7B0DD ;
-  }
-
+  
 .form_details h4{
     color: #B7B0DD;
 }
@@ -236,6 +229,23 @@ input[type="checkbox"] {
     color: white;
     background-color: #3B3B3B;
 }
+
+.footer_details{
+    margin-top: 12%;
+    color: #B7B0DD;
+    padding-bottom: 60px;
+  }
+
+  .footer_details span{
+    font-weight: bolder;
+    border-bottom: 4.5px solid transparent;
+  }
+
+  .footer_details span:hover{
+    
+    border-bottom-color:#B7B0DD ;
+  }
+
 
 
 

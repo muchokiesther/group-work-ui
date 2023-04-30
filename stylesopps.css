@@ -4,6 +4,11 @@
 
 }
 
+/* GOOGLEFONTS */
+body{
+    font-family: 'Martel Sans', sans-serif;
+}
+
 .main_container{
     justify-content: center;
     background-color: #FBFBFB;
@@ -29,26 +34,25 @@
     
     .logo p{
         color: #1F2226;
-        font-size: 25px;
+        font-size: 32.5px;
         font-weight: bold;
     }
 
     .header{
         text-align: center;
-        margin-bottom: 8%;
+        margin-bottom: 3.5%;
     }
     
     .header h1{
         color: #3B3B3B;
-        margin-bottom: 10px;
-        font-size: 62px;
+        font-size: 90px;
       
       }
         
     
     .header h2{
         color: #B7B0DD;
-        font-size: 41.5px;
+        font-size: 55.5px;
         font-weight: lighter;
     
     }
@@ -61,7 +65,7 @@
 }
   
 .key{
-    font-size: 140px;
+    font-size: 143px;
     color: #B7B0DD;
     position: absolute;
     transform: rotate(-43deg);
@@ -106,3 +110,20 @@
     color: white;
     background-color: #3B3B3B;
 }
+
+
+.footer_details{
+    margin-top: 3.5%;
+    color: #B7B0DD;
+    padding-bottom: 60px;
+  }
+
+  .footer_details span{
+    font-weight: bolder;
+    border-bottom: 4.5px solid transparent;
+  }
+
+  .footer_details span:hover{
+    
+    border-bottom-color:#B7B0DD ;
+  }
