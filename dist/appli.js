@@ -34,12 +34,18 @@ class UserData {
     }
 }
 const addButton = document.querySelector("#signupbtn");
-addButton.addEventListener("click", () => {
+addButton.addEventListener("click", (e) => {
+    e.preventDefault();
     const Usersemail = document.querySelector("#username1");
     const Userfullname = document.querySelector("#username2");
     const Username = document.querySelector("#username3");
     const PasswordII = document.querySelector("#passwordII");
     const password = document.querySelector("#password");
+    if (Usersemail.value === '' || Userfullname.value === '' || Username.value === '' || PasswordII.value === '' || password.value === '') {
+        e.preventDefault();
+        alert('Please fill all fields before submitting.');
+        return;
+    }
     const input = {
         Usersemail: Usersemail.value,
         Userfullname: Userfullname.value,

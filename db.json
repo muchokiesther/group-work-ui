@@ -53,6 +53,22 @@
       "PasswordII": "123456789",
       "password": "123456789",
       "id": 7
+    },
+    {
+      "Usersemail": "grass@gmail.com",
+      "Userfullname": "Ian mwendwa",
+      "Username": "i_mwendwa",
+      "PasswordII": "123456",
+      "password": "123456",
+      "id": 8
+    },
+    {
+      "Usersemail": "muchok.ii@2323",
+      "Userfullname": "wamuyuu trish",
+      "Username": "trish_notyrfr",
+      "PasswordII": "1233456",
+      "password": "12234556",
+      "id": 9
     }
   ]
 }

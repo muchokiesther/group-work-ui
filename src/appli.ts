@@ -33,12 +33,19 @@ class UserData{
 }
 
 const addButton = document.querySelector("#signupbtn") as HTMLButtonElement;
-addButton.addEventListener("click", ()=> {
+addButton.addEventListener("click", (e)=> {
+  e.preventDefault(); 
   const Usersemail= document.querySelector("#username1") as HTMLInputElement;
   const Userfullname = document.querySelector("#username2") as HTMLInputElement;
   const Username= document.querySelector("#username3") as HTMLInputElement;
   const PasswordII = document.querySelector("#passwordII") as HTMLInputElement;
   const password = document.querySelector("#password") as HTMLInputElement;
+
+  if (Usersemail.value === '' || Userfullname.value === '' || Username.value === '' || PasswordII.value === '' || password.value === '') {
+    e.preventDefault(); 
+    alert('Please fill all fields before submitting.');
+    return;
+  }
   const input: Userinfo = {
     
     Usersemail:Usersemail.value,
