@@ -21,13 +21,16 @@ class logins {
             else {
                 alert("Username or password is incorrect.");
             }
+            if (username === "admin") {
+                window.location.href = "register.html";
+            }
         });
     }
 }
 const loginForm = document.getElementById("login-form");
 // Add an event listener to the form's submit event
-loginForm.addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent the default form submission
+loginForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent the default form submission
     // Get the username and password input values from the form
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
