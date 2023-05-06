@@ -34,16 +34,37 @@ class UserData {
     }
 }
 const addButton = document.querySelector("#signupbtn");
-addButton.addEventListener("click", (e) => {
+addButton.addEventListener("click", (e) => __awaiter(void 0, void 0, void 0, function* () {
     e.preventDefault();
     const Usersemail = document.querySelector("#username1");
     const Userfullname = document.querySelector("#username2");
     const Username = document.querySelector("#username3");
     const PasswordII = document.querySelector("#passwordII");
     const password = document.querySelector("#password");
+    function checkIfUserExists() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield fetch('http://localhost:3000/users');
+            const users = yield response.json();
+            const foundUser = users.find((user) => user.Username === Username.value);
+            if (foundUser) {
+                alert('User already exists!');
+                return true;
+            }
+            return false;
+        });
+    }
+    const userExists = yield checkIfUserExists();
+    if (userExists) {
+        return;
+    }
     if (Usersemail.value === '' || Userfullname.value === '' || Username.value === '' || PasswordII.value === '' || password.value === '') {
         e.preventDefault();
         alert('Please fill all fields before submitting.');
+        return;
+    }
+    if (PasswordII.value !== password.value) {
+        e.preventDefault();
+        alert('please make sure your passwords match');
         return;
     }
     const input = {
@@ -54,4 +75,39 @@ addButton.addEventListener("click", (e) => {
         password: password.value,
     };
     new UserData().adddata(input);
-});
+}));
+// async function fetchusersdb(){
+//   let response= await fetch("http://localhost:3000/users")
+//   let fetchedusers=await response.json()
+//   console.log(fetchedusers)
+//   fetchedusers.forEach((element:any)=> 
+//     const Username= document.querySelector("#username3") as HTMLInputElement;
+//     let userExist=fetchedusers.find((element :{Username:string})=>element.Username=== Username)
+//   let founduser=fetchedusers.find((users:any)=>{
+//      users.Username===Username
+//   })
+//   if (founduser){
+//     e.preventDefault(); 
+//     alert('user in db')
+//   }
+//   else{
+//      e.preventDefault(); 
+//     alert('new user')
+//   }
+//  }
+//  fetchusersdb();
+// class Collectdata{
+//   async Udata(input: Userinfo)
+//   {
+//     const response = await fetch("http://localhost:3000/users", {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(input),
+//     });
+//     const result = await response.json();
+//     console.log(result);
+//   }
+// }
+// new Collectdata().Udata(user);
