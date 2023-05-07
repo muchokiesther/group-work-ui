@@ -93,6 +93,28 @@
   
 }
 
+#password{
+    border: 2.5px solid #B7B0DD;
+    border-radius: 25px;
+    padding: 12px;
+    width:24em;
+    margin-bottom: 25px;
+    font-size: 16px;
+    padding-bottom: 15px;
+  
+}
+
+#confirmpassword{
+    border: 2.5px solid #B7B0DD;
+    border-radius: 25px;
+    padding: 12px;
+    width:24em;
+    margin-bottom: 25px;
+    font-size: 16px;
+    padding-bottom: 15px;
+  
+}
+
 #sendbtn{
     border: 2.5px solid #3B3B3B;
     border-radius: 25px;

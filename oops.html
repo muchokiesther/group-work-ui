@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="stylesopps.css">
 </head>
 <body>
+    <script src="dist/reset.js" type="module" defer></script>
 
         <div class="main_container">
         <div class="logo">
@@ -22,14 +23,16 @@
                 <ion-icon class="lock" name="lock-closed"></ion-icon>
                 <ion-icon class="key" name="key"></ion-icon>
              </div>
-             <h3>Enter your email, phone, or username and we'll<br>
-                send you a link to change a new password</h3>
+             <h3>Enter your Username and retype <br> the password to change your password</h3>
 
                 <div class="form_details">
-                    <form >
-                        <label for="username"></label>
-                        <input type="text" id="username" name="username" placeholder="Username,Email or Phone Number" required><br>
-                        <input type="submit" id="sendbtn" value="Send"> 
+                    <form  id="password-reset-form">
+                        
+                 
+                        <input type="text" id="username" name="username" placeholder="Enter Username, Please" required><br>
+                        <input type="password" id="password" name="password" placeholder="Password" required> <br>
+                        <input type="password" id="confirmpassword" name="password" placeholder="Confirm Password" required> <br>
+                        <input type="submit" id="sendbtn" value="Change" > 
                     </form>
                 </div>
                     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
