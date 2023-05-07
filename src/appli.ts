@@ -56,7 +56,6 @@ addButton.addEventListener("click",  async (e:Event)=> {
       return true;
     }
 
-
     return false;
   }
 
@@ -64,7 +63,6 @@ addButton.addEventListener("click",  async (e:Event)=> {
   if (userExists) {
     return;
   }
-  
 
 
 
@@ -82,14 +80,13 @@ addButton.addEventListener("click",  async (e:Event)=> {
   }
 
   const input: Userinfo = {
-   
+    
     Usersemail:Usersemail.value,
     Userfullname: Userfullname.value,
     Username: Username.value,
     PasswordII: PasswordII.value,
     password: password.value,
   };
-
   new UserData().adddata(input);
 })
 
@@ -138,6 +135,3 @@ addButton.addEventListener("click",  async (e:Event)=> {
 // }
 
 // new Collectdata().Udata(user);
-
-
-    

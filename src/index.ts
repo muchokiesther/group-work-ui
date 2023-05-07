@@ -1,38 +1,26 @@
-
+interface Userinfo {
+  password: string;
+  userName: string;
+}
 
 class logins {
-  static async Showuser() {
+  async Showuser(username: string, password: string) {
     const response = await fetch("http://localhost:3000/users");
-    const users = await response.json();
+    const users: Userinfo[] = await response.json();
 
-    const username = (document.getElementById("username") as HTMLInputElement).value;
-    const password = (document.getElementById("password") as HTMLInputElement).value;
-console.log(username ,password)
+    const user = users.find((u) => u.userName === username);
 
-  for (let user of users){
-    if (username  === user.userName ) {
-      console.log(user.userName)
-      
+    if (user && user.password === password) {
+      // If the username and password match, redirect the user to another page
+      window.location.href = "oops.html";
+    } else {
+      alert("Username or password is incorrect.");
     }
-      //  && password === user.password 
-    //   // If the username and password match, redirect the user to another page
-      
-    //   window.location.href = "oops.html";
-    //   return false;
-    // // } else{
-    //   alert("Username or password is incorrect.");
-    //   return;
-    // }
-  
+
+    if (username === "admin") {
+      window.location.href = "register.html";
+    }
   }
-
-  if (username === "admin")
-  {
-     window.location.href = "register.html";
-   } 
-
-  }
-
 }
 
 const loginForm = document.getElementById("login-form") as HTMLFormElement;
@@ -40,5 +28,13 @@ const loginForm = document.getElementById("login-form") as HTMLFormElement;
 // Add an event listener to the form's submit event
 loginForm.addEventListener("submit", (event) => {
   event.preventDefault(); // Prevent the default form submission
-logins.Showuser()
+
+  // Get the username and password input values from the form
+  const usernameInput = document.getElementById("username") as HTMLInputElement;
+  const passwordInput = document.getElementById("password") as HTMLInputElement;
+  const username = usernameInput.value;
+  const password = passwordInput.value;
+
+  // Call the authenticateUser function and pass in the username, password, and event
+  new logins().Showuser(username, password);
 });

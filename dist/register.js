@@ -23,6 +23,11 @@ class Registration {
             confirmPassword
         };
     }
+    static redirect() {
+        if (window.location.href == ".http://127.0.0.1:5500/Register.html") {
+            window.location.replace("http://127.0.0.1:5500/login.html");
+        }
+    }
     static registerUser(event) {
         return __awaiter(this, void 0, void 0, function* () {
             event.preventDefault();
@@ -49,6 +54,7 @@ class Registration {
                         return user;
                     }
                 }
+                Registration.redirect();
             }
         });
     }

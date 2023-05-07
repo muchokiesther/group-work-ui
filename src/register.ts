@@ -15,7 +15,12 @@ class Registration {
         }
     }
 
-   
+    static redirect(){
+        if(window.location.href == ".http://127.0.0.1:5500/Register.html" ){
+            window.location.replace ("http://127.0.0.1:5500/login.html")
+          
+            }
+    }
 
     static async registerUser(event: Event) {
         event.preventDefault();
@@ -24,7 +29,6 @@ class Registration {
             alert('Please fill all fields before submitting.');
 
         } else {
-        
         
             const response = await fetch("http://localhost:3000/users")
             const users = await response.json();
@@ -44,6 +48,7 @@ class Registration {
                     return user;
                 }        
             }
+            Registration.redirect()
         }
     }
 }

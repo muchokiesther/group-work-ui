@@ -9,25 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 class logins {
-    static Showuser() {
+    Showuser(username, password) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield fetch("http://localhost:3000/users");
             const users = yield response.json();
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            console.log(username, password);
-            for (let user of users) {
-                if (username === user.userName) {
-                    console.log(user.userName);
-                }
-                //  && password === user.password 
-                //   // If the username and password match, redirect the user to another page
-                //   window.location.href = "oops.html";
-                //   return false;
-                // // } else{
-                //   alert("Username or password is incorrect.");
-                //   return;
-                // }
+            const user = users.find((u) => u.userName === username);
+            if (user && user.password === password) {
+                // If the username and password match, redirect the user to another page
+                window.location.href = "oops.html";
+            }
+            else {
+                alert("Username or password is incorrect.");
             }
             if (username === "admin") {
                 window.location.href = "register.html";
@@ -39,5 +31,11 @@ const loginForm = document.getElementById("login-form");
 // Add an event listener to the form's submit event
 loginForm.addEventListener("submit", (event) => {
     event.preventDefault(); // Prevent the default form submission
-    logins.Showuser();
+    // Get the username and password input values from the form
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+    // Call the authenticateUser function and pass in the username, password, and event
+    new logins().Showuser(username, password);
 });
